@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(user!=null){
             finish();
-            startActivity(new Intent(MainActivity.this,Welcome.class));
+            startActivity(new Intent(MainActivity.this,Welcome2.class));
         }
 
         userName =(EditText) findViewById(R.id.username);
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     Toast.makeText(MainActivity.this, "Login Sucessful", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(MainActivity.this,Welcome.class));
+                    startActivity(new Intent(MainActivity.this,Welcome2.class));
                 }
                 else{
                     Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
