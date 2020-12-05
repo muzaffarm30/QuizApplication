@@ -14,7 +14,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class Welcome extends AppCompatActivity {
     private TextView name;
     private FirebaseAuth mAuth;
-    private Button movieQuiz,computerQuiz;
+    private Button movieQuiz,computerQuiz,btnLogout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,16 @@ public class Welcome extends AppCompatActivity {
         name.setText("Hi  "+user.getEmail());
 
         movieQuiz = findViewById(R.id.btnMovie);
+        btnLogout = findViewById(R.id.btnLogout);
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mAuth.signOut();
+                finish();
+                startActivity(new Intent(Welcome.this,MainActivity.class));
+              //  finishAffinity();
+            }
+        });
         movieQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
