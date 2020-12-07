@@ -35,7 +35,6 @@ public class Welcome extends AppCompatActivity {
                 mAuth.signOut();
                 finish();
                 startActivity(new Intent(Welcome.this,MainActivity.class));
-              //  finishAffinity();
             }
         });
         movieQuiz.setOnClickListener(new View.OnClickListener() {
@@ -43,7 +42,6 @@ public class Welcome extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent =  new Intent(Welcome.this,QuestionActivity.class);
                 intent.putExtra("quiz",1);
-                //startActivity(new Intent(Welcome.this,QuestionActivity.class));
                 startActivity(intent);
                 finish();
             }
@@ -55,7 +53,6 @@ public class Welcome extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent =  new Intent(Welcome.this,QuestionActivity.class);
                 intent.putExtra("quiz",2);
-                //startActivity(new Intent(Welcome.this,QuestionActivity.class));
                 startActivity(intent);
                 finish();
             }
